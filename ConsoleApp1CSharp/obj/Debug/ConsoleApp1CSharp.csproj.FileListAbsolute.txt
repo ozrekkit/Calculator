@@ -1,0 +1,6 @@
+C:\Users\Oleh_Z\source\repos\ConsoleApp1CSharp\ConsoleApp1CSharp\bin\Debug\ConsoleApp1CSharp.exe.config
+C:\Users\Oleh_Z\source\repos\ConsoleApp1CSharp\ConsoleApp1CSharp\bin\Debug\ConsoleApp1CSharp.exe
+C:\Users\Oleh_Z\source\repos\ConsoleApp1CSharp\ConsoleApp1CSharp\bin\Debug\ConsoleApp1CSharp.pdb
+C:\Users\Oleh_Z\source\repos\ConsoleApp1CSharp\ConsoleApp1CSharp\obj\Debug\ConsoleApp1CSharp.csprojAssemblyReference.cache
+C:\Users\Oleh_Z\source\repos\ConsoleApp1CSharp\ConsoleApp1CSharp\obj\Debug\ConsoleApp1CSharp.exe
+C:\Users\Oleh_Z\source\repos\ConsoleApp1CSharp\ConsoleApp1CSharp\obj\Debug\ConsoleApp1CSharp.pdb
