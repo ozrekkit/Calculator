@@ -14,8 +14,10 @@ namespace ConsoleApp1CSharp
         static void Main(string[] args)
         {
             int x, y, count;
+
+            string operation; 
+            GetOperation();
             
-            string operation = GetOperation();
             
             
             
@@ -36,7 +38,7 @@ namespace ConsoleApp1CSharp
                 }
             }
 
-            Console.WriteLine("next you will see your array list:");
+            Console.WriteLine("next you will see your numbers input before:");
             
             foreach (int i in numbers)
             {
@@ -46,7 +48,7 @@ namespace ConsoleApp1CSharp
             
             //using switch to choose math operations
 
-            switch (operation)
+            switch ("plus")
             {
                 case "plus":
                     
@@ -58,13 +60,28 @@ namespace ConsoleApp1CSharp
             
         }
 
-        static string GetOperation()
+        static void GetOperation()
         {
             string operation;
             Console.WriteLine("Please enter the operations!(plus/minus/mult/division)");
             operation = Console.ReadLine();
+            CheckValidOperation(operation);
+            
+        }
+        static string CheckValidOperation(string op)
+        {
+            if (op == "plus")
+            {
+                return op;
+            }
+            else 
+            {
+                Console.WriteLine("Sorry, your need to input corect opreratins, please try onece more");
+                GetOperation();
+                return "";
+            }
 
-            return operation;
+            
         }
 
     }
