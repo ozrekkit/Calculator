@@ -15,10 +15,9 @@ namespace ConsoleApp1CSharp
         {
             int x, y, count;
             
-            string operation;
+            string operation = GetOperation();
             
-            Console.WriteLine("Please enter the operations!(plus/minus/mult/division)");
-            operation = Console.ReadLine();
+            
             
             Console.WriteLine("Please enter number operation element, or exit fo exit");
             string temp = Console.ReadLine();
@@ -55,12 +54,17 @@ namespace ConsoleApp1CSharp
                     break;
                               
             };
-
-
-            string[] cars = {"Volvo", "BMW", "Mercedes"};
-            int[] myNumber = {2, 32, 33, 12, 98}; 
+                                   
             
-        
+        }
+
+        static string GetOperation()
+        {
+            string operation;
+            Console.WriteLine("Please enter the operations!(plus/minus/mult/division)");
+            operation = Console.ReadLine();
+
+            return operation;
         }
 
     }
