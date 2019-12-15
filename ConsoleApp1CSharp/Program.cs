@@ -14,19 +14,13 @@ namespace ConsoleApp1CSharp
         static void Main(string[] args)
         {
             int x, y, count;
-
-            string operation; 
+             
             GetOperation();
-            
-            
-            
-            
-            Console.WriteLine("Please enter number operation element, or exit fo exit");
-            string temp = Console.ReadLine();
-            count = Int32.Parse(temp);
+            count = QuantityNumbers();
+
             int[] numbers = new int[count];
 
-            Console.WriteLine("Please start add namber for math operations: ");
+            Console.WriteLine("Please start add number for math operations: ");
 
             for (var i = 0; i < count; i++) 
             {
@@ -84,5 +78,17 @@ namespace ConsoleApp1CSharp
             
         }
 
+        static int QuantityNumbers() 
+        {
+            Console.WriteLine("Please enter number operation element, or exit fo exit");
+            int qNum;
+            while (!int.TryParse(Console.ReadLine(), out qNum))
+            Console.WriteLine("Input Error!");
+            
+            Console.WriteLine("Hello");
+
+            //int count = Int32.Parse(countNum);
+            return qNum;
+        }
     }
 }
