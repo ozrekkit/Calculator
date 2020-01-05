@@ -14,8 +14,10 @@ namespace ConsoleApp1CSharp
         static void Main(string[] args)
         {
             int x, y, count;
+            string op;
              
-            GetOperation();
+            op =  GetOperation();
+                    
             count = QuantityNumbers();
 
             int[] numbers = new int[count];
@@ -32,39 +34,44 @@ namespace ConsoleApp1CSharp
                 }
             }
 
-            Console.WriteLine("next you will see your numbers input before:");
+            ShowYourInputNumbers(numbers);
             
-            foreach (int i in numbers)
-            {
-                Console.Write(i+", ");
-            }
-            Console.WriteLine("");
-            
+
+                       
             //using switch to choose math operations
 
-            switch ("plus")
+            switch (op)
             {
                 case "plus":
                     
                     Console.WriteLine("Your sum results is: "+numbers.Sum());
                     break;
+
+                case "subtraction":
+                    Console.WriteLine("Your subtraction results is: " + subtractionFunc(numbers));
+                    break;
+
+                default:
+                    Console.WriteLine("somthing wromng with your switch system!");
+                    break;
                               
             };
+    
                                    
             
         }
 
-        static void GetOperation()
+        static string GetOperation()
         {
             string operation;
-            Console.WriteLine("Please enter the operations!(plus/minus/mult/division)");
+            Console.WriteLine("Please enter the operations!(plus/subtraction/mult/division)");
             operation = Console.ReadLine();
-            CheckValidOperation(operation);
-            
+            operation = CheckValidOperation(operation);
+            return operation;
         }
         static string CheckValidOperation(string op)
         {
-            if (op == "plus")
+            if (op == "plus" || op == "subtraction" || op == "mult" || op == "division")
             {
                 return op;
             }
@@ -89,6 +96,33 @@ namespace ConsoleApp1CSharp
 
             //int count = Int32.Parse(countNum);
             return qNum;
+        }
+
+        static void ShowYourInputNumbers(Array numbers) 
+        {
+
+            Console.WriteLine("next you will see your numbers input before:");
+
+            foreach (int i in numbers)
+            {
+                Console.Write(i + ", ");
+            }
+            Console.WriteLine("");
+        }
+
+
+        //function calculete divi
+
+        static int subtractionFunc(int[] arr)
+        {
+            int tempResult = arr[0];
+
+            for (var i = 1; i <= arr.Length - 1; i++)
+            {
+                tempResult -= arr[i];
+            };
+
+            return tempResult;
         }
     }
 }
