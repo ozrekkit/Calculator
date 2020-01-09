@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Diagnostics;
 
 //coments
 
@@ -87,14 +88,38 @@ namespace ConsoleApp1CSharp
 
         static int QuantityNumbers() 
         {
-            Console.WriteLine("Please enter number operation element, or exit fo exit");
-            int qNum;
-            while (!int.TryParse(Console.ReadLine(), out qNum))
-            Console.WriteLine("Input Error!");
+            Console.WriteLine("Please enter number operation element, or press q to quit");
+            int qNum = 0;
+            string sInput;
+           
+            sInput = Console.ReadLine();
+            if (sInput == "q")
+            {
+                endProg();
+            }
+            else
+            {
+                if (!int.TryParse(sInput, out qNum))
+                {
+                    Console.WriteLine("Input Error! ");
+                    QuantityNumbers();
+                }
+                else
+                {
+
+                    
+                }
+
+            }
+                
+
             
+
             Console.WriteLine("Hello");
+            //System.Convert.ToInt32();
 
             //int count = Int32.Parse(countNum);
+            
             return qNum;
         }
 
@@ -123,6 +148,14 @@ namespace ConsoleApp1CSharp
             };
 
             return tempResult;
+        }
+
+        //function for close program
+
+        static void endProg()
+        {
+            Console.WriteLine("Program ready to close! Good bye!");
+            Process.GetCurrentProcess().Kill();
         }
     }
 }
